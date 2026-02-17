@@ -1,0 +1,53 @@
+# Sample domains for seed collection
+# Add more domains here to expand seed collection
+
+# Major tech companies
+google.com
+www.google.com
+facebook.com
+www.facebook.com
+twitter.com
+x.com
+linkedin.com
+microsoft.com
+apple.com
+amazon.com
+netflix.com
+
+# CDNs
+cloudflare.com
+akamai.com
+fastly.com
+cdn.cloudflare.com
+
+# DNS providers
+dns.google
+one.one.one.one
+dns.cloudflare.com
+
+# Popular websites
+github.com
+stackoverflow.com
+reddit.com
+wikipedia.org
+youtube.com
+
+# News
+cnn.com
+bbc.com
+nytimes.com
+
+# Universities
+mit.edu
+stanford.edu
+harvard.edu
+berkeley.edu
+
+# Government
+nasa.gov
+nih.gov
+
+# Cloud providers
+aws.amazon.com
+cloud.google.com
+azure.microsoft.com

@@ -1,0 +1,94 @@
+# IPv6 Crawler Configuration
+
+# Seed Collection Settings
+seed_collection:
+  sources:
+    - type: dns
+      enabled: true
+      domains_file: "data/seeds/alexa_top_domains.txt"
+    - type: bgp
+      enabled: true
+      ris_url: "https://www.ris.ripe.net/dumps/"
+    - type: ct_logs
+      enabled: true
+      
+# Scanner Settings
+scanner:
+  # Maximum concurrent connections
+  max_concurrent: 100
+  # Timeout for each probe (seconds)
+  timeout: 5
+  # Ports to scan
+  ports:
+    - 80
+    - 443
+  # Rate limiting (requests per second)
+  rate_limit: 50
+  # Retry count for failed probes
+  retries: 2
+
+# Machine Learning Settings
+ml:
+  # Model type: random_forest, xgboost, ensemble
+  model_type: ensemble
+  # Training parameters
+  training:
+    test_size: 0.2
+    random_state: 42
+    n_estimators: 100
+  # Feature extraction
+  features:
+    use_nibble_features: true
+    use_entropy_features: true
+    use_pattern_features: true
+    use_allocation_features: true
+
+# Address Generation Settings
+generator:
+  # Number of addresses to generate per batch
+  batch_size: 1000
+  # Minimum confidence score for generated addresses
+  min_confidence: 0.7
+  # Maximum addresses to generate
+  max_addresses: 100000
+
+# Feedback Loop Settings
+feedback:
+  # Enable closed-loop optimization
+  enabled: true
+  # Retrain model after N successful probes
+  retrain_threshold: 500
+  # Learning rate for model updates
+  learning_rate: 0.1
+
+# Infrastructure Fingerprinting
+fingerprinting:
+  # Check HTTPS
+  check_https: true
+  # Check security headers
+  check_headers: true
+  # Detect CDN
+  detect_cdn: true
+  # Known CDN signatures
+  cdn_signatures:
+    - cloudflare
+    - akamai
+    - fastly
+    - cloudfront
+    - azure
+
+# Database Settings
+database:
+  path: "data/ipv6_crawler.db"
+  
+# Logging Settings
+logging:
+  level: INFO
+  file: "logs/crawler.log"
+  
+# Output Settings
+output:
+  results_dir: "data/results"
+  export_formats:
+    - csv
+    - json
