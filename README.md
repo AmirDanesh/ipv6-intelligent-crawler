@@ -49,19 +49,71 @@ ipv6-crawler/
 ### Hybrid Strategy
 Intelligent combination of all methods with dynamic resource allocation based on each algorithm's success rate.
 
-## 🚀 Installation
+## 🚀 Installation & Usage
 
+### Prerequisites
+- Python 3.10 or higher
+- pip (Python package manager)
+- Git
+
+### Quick Start
+
+**1. Clone the repository**
 ```bash
-# Create virtual environment
+git clone https://github.com/AmirDanesh/ipv6-intelligent-crawler.git
+cd ipv6-intelligent-crawler
+```
+
+**2. Create and activate virtual environment**
+
+Windows (PowerShell):
+```powershell
 python -m venv venv
-venv\Scripts\activate  # Windows
-source venv/bin/activate  # Linux/Mac
+.\venv\Scripts\Activate.ps1
+```
 
-# Install dependencies
+Windows (CMD):
+```cmd
+python -m venv venv
+venv\Scripts\activate.bat
+```
+
+Linux/macOS:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+**3. Install dependencies**
+```bash
 pip install -r requirements.txt
+```
 
-# Run
+**4. Run the crawler**
+```bash
+# Full crawling pipeline
 python main.py
+
+# With custom config
+python main.py --config custom_config.yaml
+
+# Quick test run
+python main.py --quick-test
+```
+
+### Command Line Options
+
+| Option | Description |
+|--------|-------------|
+| `--config` | Path to configuration file (default: `config.yaml`) |
+| `--quick-test` | Run a quick test with minimal addresses |
+| `--collect-only` | Only collect seed addresses |
+| `--probe-only` | Only probe existing addresses |
+| `--help` | Show all available options |
+
+### Verify Installation
+```bash
+python -c "from src.ml_model import IPv6ActivePredictor; print('✅ Installation successful!')"
 ```
 
 ## 📊 System Workflow
